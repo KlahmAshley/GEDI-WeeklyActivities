@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class Sirkibble : Enemies
 {
+    [SerializeField] GameObject EnemyPrefab;
+    public override void SetEnemyPrefab(GameObject enemy)
+    {
+        EnemyPrefab = enemy;
+    }
+    public override GameObject GetEnemyPrefab()
+    {
+        return EnemyPrefab;
+    }
+
     public override void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -11,3 +21,5 @@ public class Sirkibble : Enemies
         }
     }
 }
+
+
